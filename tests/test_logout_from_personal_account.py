@@ -9,9 +9,7 @@ from locators import *
 
 class TestLogoutPersonalAccount:
 
-    def test_logout_from_personal_account(self):
-
-        driver = webdriver.Chrome()
+    def test_logout_from_personal_account(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -37,5 +35,3 @@ class TestLogoutPersonalAccount:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(login_header))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-        
-        driver.quit()

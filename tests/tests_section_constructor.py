@@ -8,9 +8,7 @@ from locators import *
 class TestSectionConstructor:
 
     #Секция_булки
-    def test_section_constructor_of_buns(self):
-
-        driver = webdriver.Chrome()
+    def test_section_constructor_of_buns(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -31,16 +29,8 @@ class TestSectionConstructor:
 
         assert "Булки" in active_button.text
 
-        driver.quit()
-
-
-
-
-
     #Секция_соусы
-    def test_section_constructor_of_sauce(self):
-
-        driver = webdriver.Chrome()
+    def test_section_constructor_of_sauce(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -63,13 +53,10 @@ class TestSectionConstructor:
 
         assert "Соусы" in active_button.text
 
-        driver.quit()
-
         
 
     #Секция_начинки
-    def test_section_constructor_of_filling(self):
-        driver = webdriver.Chrome()
+    def test_section_constructor_of_filling(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -91,5 +78,3 @@ class TestSectionConstructor:
         active_button =  WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(active_tab))
 
         assert "Начинки" in active_button.text
-
-        driver.quit()

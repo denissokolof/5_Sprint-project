@@ -10,9 +10,7 @@ from locators import *
 class TestAccountEnterPaths:
 
     #Вход через кнопку "Войти в аккаунт" на главной
-    def test_login_main_page(self):
-
-        driver = webdriver.Chrome()
+    def test_login_main_page(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site")
 
@@ -23,13 +21,10 @@ class TestAccountEnterPaths:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(login_header))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-        
-        driver.quit()
+
 
     #Вход через кнопку "Личный кабинет"
-    def test_login_personal_account(self):
-
-        driver = webdriver.Chrome()
+    def test_login_personal_account(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -47,13 +42,10 @@ class TestAccountEnterPaths:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(constructor_heder))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
-        
-        driver.quit()
-    
-    #Вход через кнопку в форме регистрации
-    def test_login_registration_form(self, random_email):
 
-        driver = webdriver.Chrome()
+
+    #Вход через кнопку в форме регистрации
+    def test_login_registration_form(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/register")
 
@@ -64,13 +56,10 @@ class TestAccountEnterPaths:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(login_header))
         
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-        
-        driver.quit()
+
 
     #Вход через кнопку в форме восстановления пароля
-    def test_login_password_recovercy(self):
-
-        driver = webdriver.Chrome()
+    def test_login_password_recovercy(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/forgot-password")
 
@@ -81,5 +70,3 @@ class TestAccountEnterPaths:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(login_header))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-        
-        driver.quit()

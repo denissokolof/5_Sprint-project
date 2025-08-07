@@ -9,9 +9,7 @@ from locators import *
 
 class TestNavigatePersonalAccount:
 
-    def test_navigate_to_personal_account(self):
-
-        driver = webdriver.Chrome()
+    def test_navigate_to_personal_account(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -33,5 +31,3 @@ class TestNavigatePersonalAccount:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(exit_button))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/account/profile"
-        
-        driver.quit()

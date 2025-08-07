@@ -9,9 +9,7 @@ from locators import *
 
 class TestPersonalAccountNavigation:
 
-    def test_navigate_from_personal_account_to_constructor(self):
-
-        driver = webdriver.Chrome()
+    def test_navigate_from_personal_account_to_constructor(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -37,14 +35,10 @@ class TestPersonalAccountNavigation:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(constructor_heder))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
-        
-        driver.quit()
 
     
     
-    def test_navigate_from_personal_account_to_logo(self):
-
-        driver = webdriver.Chrome()
+    def test_navigate_from_personal_account_to_logo(self, driver):
 
         driver.get("https://stellarburgers.nomoreparties.site/login")
 
@@ -70,5 +64,3 @@ class TestPersonalAccountNavigation:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(constructor_heder))
 
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
-        
-        driver.quit()
